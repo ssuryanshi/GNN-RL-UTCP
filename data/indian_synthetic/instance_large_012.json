@@ -1,0 +1,3571 @@
+{
+  "meta": {
+    "source": "synthetic_indian",
+    "seed": 54,
+    "n_courses": 150,
+    "n_faculty": 60,
+    "n_rooms": 40,
+    "n_slots": 90,
+    "n_groups": 8
+  },
+  "timeslots": [
+    {
+      "id": "slot_0",
+      "day": "Monday",
+      "period": 1,
+      "label": "Monday_P1",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_1",
+      "day": "Monday",
+      "period": 2,
+      "label": "Monday_P2",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_2",
+      "day": "Monday",
+      "period": 3,
+      "label": "Monday_P3",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_3",
+      "day": "Monday",
+      "period": 4,
+      "label": "Monday_P4",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_4",
+      "day": "Monday",
+      "period": 5,
+      "label": "Monday_P5",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_5",
+      "day": "Monday",
+      "period": 6,
+      "label": "Monday_P6",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_6",
+      "day": "Monday",
+      "period": 7,
+      "label": "Monday_P7",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_7",
+      "day": "Monday",
+      "period": 8,
+      "label": "Monday_P8",
+      "is_morning": false,
+      "is_last_period": true
+    },
+    {
+      "id": "slot_8",
+      "day": "Tuesday",
+      "period": 1,
+      "label": "Tuesday_P1",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_9",
+      "day": "Tuesday",
+      "period": 2,
+      "label": "Tuesday_P2",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_10",
+      "day": "Tuesday",
+      "period": 3,
+      "label": "Tuesday_P3",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_11",
+      "day": "Tuesday",
+      "period": 4,
+      "label": "Tuesday_P4",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_12",
+      "day": "Tuesday",
+      "period": 5,
+      "label": "Tuesday_P5",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_13",
+      "day": "Tuesday",
+      "period": 6,
+      "label": "Tuesday_P6",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_14",
+      "day": "Tuesday",
+      "period": 7,
+      "label": "Tuesday_P7",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_15",
+      "day": "Tuesday",
+      "period": 8,
+      "label": "Tuesday_P8",
+      "is_morning": false,
+      "is_last_period": true
+    },
+    {
+      "id": "slot_16",
+      "day": "Wednesday",
+      "period": 1,
+      "label": "Wednesday_P1",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_17",
+      "day": "Wednesday",
+      "period": 2,
+      "label": "Wednesday_P2",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_18",
+      "day": "Wednesday",
+      "period": 3,
+      "label": "Wednesday_P3",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_19",
+      "day": "Wednesday",
+      "period": 4,
+      "label": "Wednesday_P4",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_20",
+      "day": "Wednesday",
+      "period": 5,
+      "label": "Wednesday_P5",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_21",
+      "day": "Wednesday",
+      "period": 6,
+      "label": "Wednesday_P6",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_22",
+      "day": "Wednesday",
+      "period": 7,
+      "label": "Wednesday_P7",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_23",
+      "day": "Wednesday",
+      "period": 8,
+      "label": "Wednesday_P8",
+      "is_morning": false,
+      "is_last_period": true
+    },
+    {
+      "id": "slot_24",
+      "day": "Thursday",
+      "period": 1,
+      "label": "Thursday_P1",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_25",
+      "day": "Thursday",
+      "period": 2,
+      "label": "Thursday_P2",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_26",
+      "day": "Thursday",
+      "period": 3,
+      "label": "Thursday_P3",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_27",
+      "day": "Thursday",
+      "period": 4,
+      "label": "Thursday_P4",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_28",
+      "day": "Thursday",
+      "period": 5,
+      "label": "Thursday_P5",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_29",
+      "day": "Thursday",
+      "period": 6,
+      "label": "Thursday_P6",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_30",
+      "day": "Thursday",
+      "period": 7,
+      "label": "Thursday_P7",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_31",
+      "day": "Thursday",
+      "period": 8,
+      "label": "Thursday_P8",
+      "is_morning": false,
+      "is_last_period": true
+    },
+    {
+      "id": "slot_32",
+      "day": "Friday",
+      "period": 1,
+      "label": "Friday_P1",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_33",
+      "day": "Friday",
+      "period": 2,
+      "label": "Friday_P2",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_34",
+      "day": "Friday",
+      "period": 3,
+      "label": "Friday_P3",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_35",
+      "day": "Friday",
+      "period": 4,
+      "label": "Friday_P4",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_36",
+      "day": "Friday",
+      "period": 5,
+      "label": "Friday_P5",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_37",
+      "day": "Friday",
+      "period": 6,
+      "label": "Friday_P6",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_38",
+      "day": "Friday",
+      "period": 7,
+      "label": "Friday_P7",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_39",
+      "day": "Friday",
+      "period": 8,
+      "label": "Friday_P8",
+      "is_morning": false,
+      "is_last_period": true
+    },
+    {
+      "id": "slot_40",
+      "day": "Saturday",
+      "period": 1,
+      "label": "Saturday_P1",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_41",
+      "day": "Saturday",
+      "period": 2,
+      "label": "Saturday_P2",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_42",
+      "day": "Saturday",
+      "period": 3,
+      "label": "Saturday_P3",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_43",
+      "day": "Saturday",
+      "period": 4,
+      "label": "Saturday_P4",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_44",
+      "day": "Saturday",
+      "period": 5,
+      "label": "Saturday_P5",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_45",
+      "day": "Saturday",
+      "period": 6,
+      "label": "Saturday_P6",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_46",
+      "day": "Saturday",
+      "period": 7,
+      "label": "Saturday_P7",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_47",
+      "day": "Saturday",
+      "period": 8,
+      "label": "Saturday_P8",
+      "is_morning": false,
+      "is_last_period": true
+    },
+    {
+      "id": "slot_48",
+      "day": "Monday",
+      "period": 1,
+      "label": "Monday_P1",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_49",
+      "day": "Monday",
+      "period": 2,
+      "label": "Monday_P2",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_50",
+      "day": "Monday",
+      "period": 3,
+      "label": "Monday_P3",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_51",
+      "day": "Monday",
+      "period": 4,
+      "label": "Monday_P4",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_52",
+      "day": "Monday",
+      "period": 5,
+      "label": "Monday_P5",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_53",
+      "day": "Monday",
+      "period": 6,
+      "label": "Monday_P6",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_54",
+      "day": "Monday",
+      "period": 7,
+      "label": "Monday_P7",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_55",
+      "day": "Monday",
+      "period": 8,
+      "label": "Monday_P8",
+      "is_morning": false,
+      "is_last_period": true
+    },
+    {
+      "id": "slot_56",
+      "day": "Tuesday",
+      "period": 1,
+      "label": "Tuesday_P1",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_57",
+      "day": "Tuesday",
+      "period": 2,
+      "label": "Tuesday_P2",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_58",
+      "day": "Tuesday",
+      "period": 3,
+      "label": "Tuesday_P3",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_59",
+      "day": "Tuesday",
+      "period": 4,
+      "label": "Tuesday_P4",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_60",
+      "day": "Tuesday",
+      "period": 5,
+      "label": "Tuesday_P5",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_61",
+      "day": "Tuesday",
+      "period": 6,
+      "label": "Tuesday_P6",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_62",
+      "day": "Tuesday",
+      "period": 7,
+      "label": "Tuesday_P7",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_63",
+      "day": "Tuesday",
+      "period": 8,
+      "label": "Tuesday_P8",
+      "is_morning": false,
+      "is_last_period": true
+    },
+    {
+      "id": "slot_64",
+      "day": "Wednesday",
+      "period": 1,
+      "label": "Wednesday_P1",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_65",
+      "day": "Wednesday",
+      "period": 2,
+      "label": "Wednesday_P2",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_66",
+      "day": "Wednesday",
+      "period": 3,
+      "label": "Wednesday_P3",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_67",
+      "day": "Wednesday",
+      "period": 4,
+      "label": "Wednesday_P4",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_68",
+      "day": "Wednesday",
+      "period": 5,
+      "label": "Wednesday_P5",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_69",
+      "day": "Wednesday",
+      "period": 6,
+      "label": "Wednesday_P6",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_70",
+      "day": "Wednesday",
+      "period": 7,
+      "label": "Wednesday_P7",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_71",
+      "day": "Wednesday",
+      "period": 8,
+      "label": "Wednesday_P8",
+      "is_morning": false,
+      "is_last_period": true
+    },
+    {
+      "id": "slot_72",
+      "day": "Thursday",
+      "period": 1,
+      "label": "Thursday_P1",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_73",
+      "day": "Thursday",
+      "period": 2,
+      "label": "Thursday_P2",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_74",
+      "day": "Thursday",
+      "period": 3,
+      "label": "Thursday_P3",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_75",
+      "day": "Thursday",
+      "period": 4,
+      "label": "Thursday_P4",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_76",
+      "day": "Thursday",
+      "period": 5,
+      "label": "Thursday_P5",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_77",
+      "day": "Thursday",
+      "period": 6,
+      "label": "Thursday_P6",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_78",
+      "day": "Thursday",
+      "period": 7,
+      "label": "Thursday_P7",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_79",
+      "day": "Thursday",
+      "period": 8,
+      "label": "Thursday_P8",
+      "is_morning": false,
+      "is_last_period": true
+    },
+    {
+      "id": "slot_80",
+      "day": "Friday",
+      "period": 1,
+      "label": "Friday_P1",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_81",
+      "day": "Friday",
+      "period": 2,
+      "label": "Friday_P2",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_82",
+      "day": "Friday",
+      "period": 3,
+      "label": "Friday_P3",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_83",
+      "day": "Friday",
+      "period": 4,
+      "label": "Friday_P4",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_84",
+      "day": "Friday",
+      "period": 5,
+      "label": "Friday_P5",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_85",
+      "day": "Friday",
+      "period": 6,
+      "label": "Friday_P6",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_86",
+      "day": "Friday",
+      "period": 7,
+      "label": "Friday_P7",
+      "is_morning": false,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_87",
+      "day": "Friday",
+      "period": 8,
+      "label": "Friday_P8",
+      "is_morning": false,
+      "is_last_period": true
+    },
+    {
+      "id": "slot_88",
+      "day": "Saturday",
+      "period": 1,
+      "label": "Saturday_P1",
+      "is_morning": true,
+      "is_last_period": false
+    },
+    {
+      "id": "slot_89",
+      "day": "Saturday",
+      "period": 2,
+      "label": "Saturday_P2",
+      "is_morning": true,
+      "is_last_period": false
+    }
+  ],
+  "rooms": [
+    {
+      "id": "room_0",
+      "type": "lecture",
+      "capacity": 60,
+      "building": "Block_A"
+    },
+    {
+      "id": "room_1",
+      "type": "lab",
+      "capacity": 30,
+      "building": "Block_B"
+    },
+    {
+      "id": "room_2",
+      "type": "seminar",
+      "capacity": 30,
+      "building": "Block_C"
+    },
+    {
+      "id": "room_3",
+      "type": "lecture",
+      "capacity": 80,
+      "building": "Block_D"
+    },
+    {
+      "id": "room_4",
+      "type": "lab",
+      "capacity": 30,
+      "building": "Block_E"
+    },
+    {
+      "id": "room_5",
+      "type": "seminar",
+      "capacity": 30,
+      "building": "Block_A"
+    },
+    {
+      "id": "room_6",
+      "type": "lecture",
+      "capacity": 120,
+      "building": "Block_B"
+    },
+    {
+      "id": "room_7",
+      "type": "lab",
+      "capacity": 30,
+      "building": "Block_C"
+    },
+    {
+      "id": "room_8",
+      "type": "seminar",
+      "capacity": 30,
+      "building": "Block_D"
+    },
+    {
+      "id": "room_9",
+      "type": "lecture",
+      "capacity": 60,
+      "building": "Block_E"
+    },
+    {
+      "id": "room_10",
+      "type": "lab",
+      "capacity": 30,
+      "building": "Block_A"
+    },
+    {
+      "id": "room_11",
+      "type": "seminar",
+      "capacity": 30,
+      "building": "Block_B"
+    },
+    {
+      "id": "room_12",
+      "type": "lecture",
+      "capacity": 80,
+      "building": "Block_C"
+    },
+    {
+      "id": "room_13",
+      "type": "lab",
+      "capacity": 30,
+      "building": "Block_D"
+    },
+    {
+      "id": "room_14",
+      "type": "seminar",
+      "capacity": 30,
+      "building": "Block_E"
+    },
+    {
+      "id": "room_15",
+      "type": "lecture",
+      "capacity": 60,
+      "building": "Block_A"
+    },
+    {
+      "id": "room_16",
+      "type": "lab",
+      "capacity": 20,
+      "building": "Block_B"
+    },
+    {
+      "id": "room_17",
+      "type": "seminar",
+      "capacity": 30,
+      "building": "Block_C"
+    },
+    {
+      "id": "room_18",
+      "type": "lecture",
+      "capacity": 40,
+      "building": "Block_D"
+    },
+    {
+      "id": "room_19",
+      "type": "lab",
+      "capacity": 30,
+      "building": "Block_E"
+    },
+    {
+      "id": "room_20",
+      "type": "seminar",
+      "capacity": 30,
+      "building": "Block_A"
+    },
+    {
+      "id": "room_21",
+      "type": "lecture",
+      "capacity": 120,
+      "building": "Block_B"
+    },
+    {
+      "id": "room_22",
+      "type": "lab",
+      "capacity": 20,
+      "building": "Block_C"
+    },
+    {
+      "id": "room_23",
+      "type": "seminar",
+      "capacity": 30,
+      "building": "Block_D"
+    },
+    {
+      "id": "room_24",
+      "type": "lecture",
+      "capacity": 80,
+      "building": "Block_E"
+    },
+    {
+      "id": "room_25",
+      "type": "lab",
+      "capacity": 30,
+      "building": "Block_A"
+    },
+    {
+      "id": "room_26",
+      "type": "seminar",
+      "capacity": 30,
+      "building": "Block_B"
+    },
+    {
+      "id": "room_27",
+      "type": "lecture",
+      "capacity": 120,
+      "building": "Block_C"
+    },
+    {
+      "id": "room_28",
+      "type": "lab",
+      "capacity": 30,
+      "building": "Block_D"
+    },
+    {
+      "id": "room_29",
+      "type": "seminar",
+      "capacity": 30,
+      "building": "Block_E"
+    },
+    {
+      "id": "room_30",
+      "type": "lecture",
+      "capacity": 60,
+      "building": "Block_A"
+    },
+    {
+      "id": "room_31",
+      "type": "lab",
+      "capacity": 20,
+      "building": "Block_B"
+    },
+    {
+      "id": "room_32",
+      "type": "seminar",
+      "capacity": 30,
+      "building": "Block_C"
+    },
+    {
+      "id": "room_33",
+      "type": "lecture",
+      "capacity": 80,
+      "building": "Block_D"
+    },
+    {
+      "id": "room_34",
+      "type": "lab",
+      "capacity": 30,
+      "building": "Block_E"
+    },
+    {
+      "id": "room_35",
+      "type": "seminar",
+      "capacity": 30,
+      "building": "Block_A"
+    },
+    {
+      "id": "room_36",
+      "type": "lecture",
+      "capacity": 120,
+      "building": "Block_B"
+    },
+    {
+      "id": "room_37",
+      "type": "lab",
+      "capacity": 20,
+      "building": "Block_C"
+    },
+    {
+      "id": "room_38",
+      "type": "seminar",
+      "capacity": 30,
+      "building": "Block_D"
+    },
+    {
+      "id": "room_39",
+      "type": "lecture",
+      "capacity": 120,
+      "building": "Block_E"
+    }
+  ],
+  "faculty": [
+    {
+      "id": "faculty_0",
+      "name": "Prof_0",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Wednesday_P5",
+        "Monday_P4"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_1",
+      "name": "Prof_1",
+      "medium": "english",
+      "unavailable_slots": [
+        "Monday_P4",
+        "Thursday_P4",
+        "Saturday_P3"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_2",
+      "name": "Prof_2",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Saturday_P1",
+        "Friday_P4",
+        "Wednesday_P7",
+        "Tuesday_P8",
+        "Tuesday_P4",
+        "Saturday_P8"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_3",
+      "name": "Prof_3",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Wednesday_P2",
+        "Thursday_P8",
+        "Wednesday_P4",
+        "Wednesday_P8",
+        "Wednesday_P1"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_4",
+      "name": "Prof_4",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Friday_P8",
+        "Thursday_P4",
+        "Tuesday_P8",
+        "Wednesday_P5",
+        "Friday_P5",
+        "Friday_P6"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_5",
+      "name": "Prof_5",
+      "medium": "english",
+      "unavailable_slots": [
+        "Wednesday_P7",
+        "Thursday_P3",
+        "Wednesday_P8",
+        "Thursday_P7",
+        "Thursday_P6",
+        "Thursday_P2"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_6",
+      "name": "Prof_6",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Wednesday_P3",
+        "Wednesday_P8",
+        "Thursday_P6",
+        "Saturday_P5",
+        "Friday_P5"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_7",
+      "name": "Prof_7",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Tuesday_P3",
+        "Tuesday_P2"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_8",
+      "name": "Prof_8",
+      "medium": "english",
+      "unavailable_slots": [
+        "Wednesday_P6",
+        "Tuesday_P3",
+        "Tuesday_P4",
+        "Thursday_P5",
+        "Wednesday_P3",
+        "Saturday_P6"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_9",
+      "name": "Prof_9",
+      "medium": "english",
+      "unavailable_slots": [
+        "Monday_P1",
+        "Saturday_P1",
+        "Saturday_P3",
+        "Wednesday_P8",
+        "Thursday_P6"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_10",
+      "name": "Prof_10",
+      "medium": "english",
+      "unavailable_slots": [
+        "Friday_P7",
+        "Thursday_P3"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_11",
+      "name": "Prof_11",
+      "medium": "english",
+      "unavailable_slots": [
+        "Thursday_P1",
+        "Monday_P4",
+        "Thursday_P4",
+        "Wednesday_P6"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_12",
+      "name": "Prof_12",
+      "medium": "english",
+      "unavailable_slots": [
+        "Saturday_P1",
+        "Tuesday_P4",
+        "Friday_P7",
+        "Monday_P2",
+        "Thursday_P6"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_13",
+      "name": "Prof_13",
+      "medium": "english",
+      "unavailable_slots": [
+        "Saturday_P5",
+        "Monday_P8",
+        "Wednesday_P4",
+        "Friday_P1"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_14",
+      "name": "Prof_14",
+      "medium": "english",
+      "unavailable_slots": [
+        "Saturday_P4",
+        "Saturday_P3",
+        "Monday_P7",
+        "Thursday_P1",
+        "Wednesday_P8",
+        "Friday_P5"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_15",
+      "name": "Prof_15",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Tuesday_P7",
+        "Thursday_P4",
+        "Friday_P5",
+        "Monday_P7"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_16",
+      "name": "Prof_16",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Tuesday_P6",
+        "Friday_P7",
+        "Monday_P7",
+        "Wednesday_P3",
+        "Saturday_P5"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_17",
+      "name": "Prof_17",
+      "medium": "english",
+      "unavailable_slots": [
+        "Wednesday_P5",
+        "Wednesday_P6",
+        "Thursday_P5"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_18",
+      "name": "Prof_18",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Friday_P3",
+        "Wednesday_P6",
+        "Thursday_P3"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_19",
+      "name": "Prof_19",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Wednesday_P2",
+        "Thursday_P2"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_20",
+      "name": "Prof_20",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Monday_P6",
+        "Monday_P1",
+        "Friday_P1"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_21",
+      "name": "Prof_21",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Thursday_P6",
+        "Saturday_P2",
+        "Friday_P3"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_22",
+      "name": "Prof_22",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Tuesday_P5",
+        "Monday_P8",
+        "Monday_P1"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_23",
+      "name": "Prof_23",
+      "medium": "english",
+      "unavailable_slots": [
+        "Saturday_P2",
+        "Saturday_P3",
+        "Thursday_P8",
+        "Thursday_P7",
+        "Friday_P1"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_24",
+      "name": "Prof_24",
+      "medium": "english",
+      "unavailable_slots": [
+        "Saturday_P4",
+        "Thursday_P4",
+        "Tuesday_P2"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_25",
+      "name": "Prof_25",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Monday_P5",
+        "Friday_P3",
+        "Friday_P7",
+        "Thursday_P3"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_26",
+      "name": "Prof_26",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Tuesday_P8",
+        "Tuesday_P4",
+        "Thursday_P7",
+        "Wednesday_P5",
+        "Friday_P5"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_27",
+      "name": "Prof_27",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Friday_P8",
+        "Monday_P1",
+        "Tuesday_P7",
+        "Monday_P3"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_28",
+      "name": "Prof_28",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Monday_P1",
+        "Tuesday_P6",
+        "Thursday_P8",
+        "Tuesday_P7"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_29",
+      "name": "Prof_29",
+      "medium": "english",
+      "unavailable_slots": [
+        "Tuesday_P8",
+        "Thursday_P4"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_30",
+      "name": "Prof_30",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Friday_P7",
+        "Wednesday_P1"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_31",
+      "name": "Prof_31",
+      "medium": "english",
+      "unavailable_slots": [
+        "Saturday_P2",
+        "Thursday_P2"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_32",
+      "name": "Prof_32",
+      "medium": "english",
+      "unavailable_slots": [
+        "Monday_P5",
+        "Monday_P1",
+        "Friday_P4",
+        "Wednesday_P4",
+        "Monday_P6",
+        "Thursday_P6"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_33",
+      "name": "Prof_33",
+      "medium": "english",
+      "unavailable_slots": [
+        "Wednesday_P2",
+        "Tuesday_P6",
+        "Monday_P4",
+        "Saturday_P4",
+        "Tuesday_P3",
+        "Wednesday_P4"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_34",
+      "name": "Prof_34",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Saturday_P1",
+        "Thursday_P3",
+        "Thursday_P1",
+        "Wednesday_P5",
+        "Saturday_P5"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_35",
+      "name": "Prof_35",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Tuesday_P3",
+        "Saturday_P2",
+        "Saturday_P1",
+        "Thursday_P2"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_36",
+      "name": "Prof_36",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Saturday_P5",
+        "Wednesday_P8",
+        "Monday_P8",
+        "Wednesday_P1"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_37",
+      "name": "Prof_37",
+      "medium": "english",
+      "unavailable_slots": [
+        "Wednesday_P7",
+        "Friday_P6",
+        "Saturday_P6",
+        "Monday_P2"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_38",
+      "name": "Prof_38",
+      "medium": "english",
+      "unavailable_slots": [
+        "Thursday_P8",
+        "Wednesday_P6",
+        "Monday_P2"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_39",
+      "name": "Prof_39",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Tuesday_P6",
+        "Thursday_P4"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_40",
+      "name": "Prof_40",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Wednesday_P2",
+        "Thursday_P3",
+        "Tuesday_P8",
+        "Saturday_P5",
+        "Friday_P3"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_41",
+      "name": "Prof_41",
+      "medium": "english",
+      "unavailable_slots": [
+        "Wednesday_P7",
+        "Saturday_P8",
+        "Thursday_P5",
+        "Friday_P6",
+        "Saturday_P6"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_42",
+      "name": "Prof_42",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Monday_P2",
+        "Thursday_P2"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_43",
+      "name": "Prof_43",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Wednesday_P7",
+        "Wednesday_P3",
+        "Wednesday_P4",
+        "Wednesday_P8",
+        "Wednesday_P5",
+        "Saturday_P6"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_44",
+      "name": "Prof_44",
+      "medium": "english",
+      "unavailable_slots": [
+        "Wednesday_P7",
+        "Tuesday_P2",
+        "Tuesday_P4",
+        "Tuesday_P5",
+        "Wednesday_P8"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_45",
+      "name": "Prof_45",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Tuesday_P6",
+        "Tuesday_P4",
+        "Thursday_P1",
+        "Wednesday_P3",
+        "Saturday_P6"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_46",
+      "name": "Prof_46",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Wednesday_P2",
+        "Friday_P7",
+        "Saturday_P4"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_47",
+      "name": "Prof_47",
+      "medium": "english",
+      "unavailable_slots": [
+        "Wednesday_P6",
+        "Friday_P6"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_48",
+      "name": "Prof_48",
+      "medium": "english",
+      "unavailable_slots": [
+        "Saturday_P5",
+        "Thursday_P3"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_49",
+      "name": "Prof_49",
+      "medium": "english",
+      "unavailable_slots": [
+        "Tuesday_P7",
+        "Saturday_P5",
+        "Friday_P5",
+        "Thursday_P2"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_50",
+      "name": "Prof_50",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Monday_P6",
+        "Thursday_P2"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_51",
+      "name": "Prof_51",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Friday_P8",
+        "Friday_P4",
+        "Friday_P5",
+        "Wednesday_P1"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_52",
+      "name": "Prof_52",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Tuesday_P7",
+        "Thursday_P8",
+        "Friday_P7"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_53",
+      "name": "Prof_53",
+      "medium": "english",
+      "unavailable_slots": [
+        "Tuesday_P8",
+        "Tuesday_P7"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_54",
+      "name": "Prof_54",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Wednesday_P6",
+        "Thursday_P5",
+        "Monday_P7",
+        "Thursday_P8",
+        "Monday_P2",
+        "Thursday_P2"
+      ],
+      "max_hours_per_day": 6
+    },
+    {
+      "id": "faculty_55",
+      "name": "Prof_55",
+      "medium": "english",
+      "unavailable_slots": [
+        "Monday_P4",
+        "Tuesday_P6",
+        "Saturday_P3",
+        "Wednesday_P1"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_56",
+      "name": "Prof_56",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Monday_P6",
+        "Saturday_P7",
+        "Friday_P6",
+        "Tuesday_P1"
+      ],
+      "max_hours_per_day": 5
+    },
+    {
+      "id": "faculty_57",
+      "name": "Prof_57",
+      "medium": "regional",
+      "unavailable_slots": [
+        "Tuesday_P1",
+        "Tuesday_P5",
+        "Wednesday_P2"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_58",
+      "name": "Prof_58",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Monday_P1",
+        "Tuesday_P6",
+        "Saturday_P4",
+        "Wednesday_P8",
+        "Thursday_P2"
+      ],
+      "max_hours_per_day": 4
+    },
+    {
+      "id": "faculty_59",
+      "name": "Prof_59",
+      "medium": "hindi",
+      "unavailable_slots": [
+        "Monday_P8",
+        "Saturday_P4",
+        "Saturday_P8",
+        "Thursday_P1",
+        "Wednesday_P4",
+        "Monday_P2"
+      ],
+      "max_hours_per_day": 5
+    }
+  ],
+  "student_groups": [
+    {
+      "id": "group_0",
+      "name": "Group_0",
+      "year": 1,
+      "size": 53,
+      "is_first_year": true
+    },
+    {
+      "id": "group_1",
+      "name": "Group_1",
+      "year": 2,
+      "size": 60,
+      "is_first_year": false
+    },
+    {
+      "id": "group_2",
+      "name": "Group_2",
+      "year": 3,
+      "size": 56,
+      "is_first_year": false
+    },
+    {
+      "id": "group_3",
+      "name": "Group_3",
+      "year": 4,
+      "size": 40,
+      "is_first_year": false
+    },
+    {
+      "id": "group_4",
+      "name": "Group_4",
+      "year": 1,
+      "size": 39,
+      "is_first_year": true
+    },
+    {
+      "id": "group_5",
+      "name": "Group_5",
+      "year": 2,
+      "size": 35,
+      "is_first_year": false
+    },
+    {
+      "id": "group_6",
+      "name": "Group_6",
+      "year": 3,
+      "size": 56,
+      "is_first_year": false
+    },
+    {
+      "id": "group_7",
+      "name": "Group_7",
+      "year": 4,
+      "size": 42,
+      "is_first_year": false
+    }
+  ],
+  "courses": [
+    {
+      "id": "course_0",
+      "name": "Course_0",
+      "is_lab": true,
+      "medium": "english",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 45,
+      "faculty_id": "faculty_31",
+      "group_id": "group_6",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_1",
+      "name": "Course_1",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 48,
+      "faculty_id": "faculty_14",
+      "group_id": "group_3",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_2",
+      "name": "Course_2",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 32,
+      "faculty_id": "faculty_47",
+      "group_id": "group_4",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_3",
+      "name": "Course_3",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 44,
+      "faculty_id": "faculty_16",
+      "group_id": "group_1",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_4",
+      "name": "Course_4",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 50,
+      "faculty_id": "faculty_39",
+      "group_id": "group_1",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_5",
+      "name": "Course_5",
+      "is_lab": true,
+      "medium": "hindi",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 26,
+      "faculty_id": "faculty_2",
+      "group_id": "group_1",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_6",
+      "name": "Course_6",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 23,
+      "faculty_id": "faculty_1",
+      "group_id": "group_7",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_7",
+      "name": "Course_7",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 35,
+      "faculty_id": "faculty_2",
+      "group_id": "group_4",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_8",
+      "name": "Course_8",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 31,
+      "faculty_id": "faculty_30",
+      "group_id": "group_1",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_9",
+      "name": "Course_9",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 39,
+      "faculty_id": "faculty_57",
+      "group_id": "group_2",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_10",
+      "name": "Course_10",
+      "is_lab": true,
+      "medium": "english",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 25,
+      "faculty_id": "faculty_12",
+      "group_id": "group_3",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_11",
+      "name": "Course_11",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 38,
+      "faculty_id": "faculty_44",
+      "group_id": "group_1",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_12",
+      "name": "Course_12",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 50,
+      "faculty_id": "faculty_36",
+      "group_id": "group_5",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_13",
+      "name": "Course_13",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 58,
+      "faculty_id": "faculty_48",
+      "group_id": "group_2",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_14",
+      "name": "Course_14",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 35,
+      "faculty_id": "faculty_56",
+      "group_id": "group_3",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_15",
+      "name": "Course_15",
+      "is_lab": true,
+      "medium": "hindi",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 58,
+      "faculty_id": "faculty_59",
+      "group_id": "group_1",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_16",
+      "name": "Course_16",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 46,
+      "faculty_id": "faculty_15",
+      "group_id": "group_4",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_17",
+      "name": "Course_17",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 46,
+      "faculty_id": "faculty_28",
+      "group_id": "group_0",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_18",
+      "name": "Course_18",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 21,
+      "faculty_id": "faculty_26",
+      "group_id": "group_6",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_19",
+      "name": "Course_19",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 23,
+      "faculty_id": "faculty_30",
+      "group_id": "group_4",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_20",
+      "name": "Course_20",
+      "is_lab": true,
+      "medium": "hindi",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 48,
+      "faculty_id": "faculty_42",
+      "group_id": "group_7",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_21",
+      "name": "Course_21",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 57,
+      "faculty_id": "faculty_47",
+      "group_id": "group_7",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_22",
+      "name": "Course_22",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 24,
+      "faculty_id": "faculty_51",
+      "group_id": "group_0",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_23",
+      "name": "Course_23",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 31,
+      "faculty_id": "faculty_9",
+      "group_id": "group_2",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_24",
+      "name": "Course_24",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 24,
+      "faculty_id": "faculty_43",
+      "group_id": "group_6",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_25",
+      "name": "Course_25",
+      "is_lab": true,
+      "medium": "regional",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 26,
+      "faculty_id": "faculty_21",
+      "group_id": "group_1",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_26",
+      "name": "Course_26",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 46,
+      "faculty_id": "faculty_8",
+      "group_id": "group_2",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_27",
+      "name": "Course_27",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 43,
+      "faculty_id": "faculty_58",
+      "group_id": "group_3",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_28",
+      "name": "Course_28",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 34,
+      "faculty_id": "faculty_58",
+      "group_id": "group_3",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_29",
+      "name": "Course_29",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 60,
+      "faculty_id": "faculty_37",
+      "group_id": "group_5",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_30",
+      "name": "Course_30",
+      "is_lab": true,
+      "medium": "regional",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 25,
+      "faculty_id": "faculty_57",
+      "group_id": "group_4",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_31",
+      "name": "Course_31",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 42,
+      "faculty_id": "faculty_56",
+      "group_id": "group_5",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_32",
+      "name": "Course_32",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 27,
+      "faculty_id": "faculty_48",
+      "group_id": "group_7",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_33",
+      "name": "Course_33",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 25,
+      "faculty_id": "faculty_5",
+      "group_id": "group_2",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_34",
+      "name": "Course_34",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 35,
+      "faculty_id": "faculty_19",
+      "group_id": "group_6",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_35",
+      "name": "Course_35",
+      "is_lab": true,
+      "medium": "regional",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 56,
+      "faculty_id": "faculty_43",
+      "group_id": "group_4",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_36",
+      "name": "Course_36",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 22,
+      "faculty_id": "faculty_51",
+      "group_id": "group_2",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_37",
+      "name": "Course_37",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 21,
+      "faculty_id": "faculty_39",
+      "group_id": "group_0",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_38",
+      "name": "Course_38",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 23,
+      "faculty_id": "faculty_58",
+      "group_id": "group_0",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_39",
+      "name": "Course_39",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 60,
+      "faculty_id": "faculty_32",
+      "group_id": "group_7",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_40",
+      "name": "Course_40",
+      "is_lab": true,
+      "medium": "regional",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 50,
+      "faculty_id": "faculty_50",
+      "group_id": "group_4",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_41",
+      "name": "Course_41",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 24,
+      "faculty_id": "faculty_1",
+      "group_id": "group_0",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_42",
+      "name": "Course_42",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 33,
+      "faculty_id": "faculty_48",
+      "group_id": "group_4",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_43",
+      "name": "Course_43",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 23,
+      "faculty_id": "faculty_11",
+      "group_id": "group_3",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_44",
+      "name": "Course_44",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 52,
+      "faculty_id": "faculty_2",
+      "group_id": "group_4",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_45",
+      "name": "Course_45",
+      "is_lab": true,
+      "medium": "regional",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 59,
+      "faculty_id": "faculty_4",
+      "group_id": "group_7",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_46",
+      "name": "Course_46",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 23,
+      "faculty_id": "faculty_9",
+      "group_id": "group_3",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_47",
+      "name": "Course_47",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 46,
+      "faculty_id": "faculty_4",
+      "group_id": "group_4",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_48",
+      "name": "Course_48",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 30,
+      "faculty_id": "faculty_10",
+      "group_id": "group_1",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_49",
+      "name": "Course_49",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 32,
+      "faculty_id": "faculty_45",
+      "group_id": "group_0",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_50",
+      "name": "Course_50",
+      "is_lab": true,
+      "medium": "english",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 47,
+      "faculty_id": "faculty_41",
+      "group_id": "group_0",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_51",
+      "name": "Course_51",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 33,
+      "faculty_id": "faculty_42",
+      "group_id": "group_3",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_52",
+      "name": "Course_52",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 32,
+      "faculty_id": "faculty_6",
+      "group_id": "group_3",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_53",
+      "name": "Course_53",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 27,
+      "faculty_id": "faculty_56",
+      "group_id": "group_5",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_54",
+      "name": "Course_54",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 54,
+      "faculty_id": "faculty_52",
+      "group_id": "group_7",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_55",
+      "name": "Course_55",
+      "is_lab": true,
+      "medium": "hindi",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 54,
+      "faculty_id": "faculty_15",
+      "group_id": "group_0",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_56",
+      "name": "Course_56",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 33,
+      "faculty_id": "faculty_13",
+      "group_id": "group_2",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_57",
+      "name": "Course_57",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 20,
+      "faculty_id": "faculty_48",
+      "group_id": "group_5",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_58",
+      "name": "Course_58",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 52,
+      "faculty_id": "faculty_25",
+      "group_id": "group_4",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_59",
+      "name": "Course_59",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 29,
+      "faculty_id": "faculty_11",
+      "group_id": "group_1",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_60",
+      "name": "Course_60",
+      "is_lab": true,
+      "medium": "hindi",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 24,
+      "faculty_id": "faculty_26",
+      "group_id": "group_6",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_61",
+      "name": "Course_61",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 45,
+      "faculty_id": "faculty_19",
+      "group_id": "group_6",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_62",
+      "name": "Course_62",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 36,
+      "faculty_id": "faculty_57",
+      "group_id": "group_2",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_63",
+      "name": "Course_63",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 55,
+      "faculty_id": "faculty_36",
+      "group_id": "group_2",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_64",
+      "name": "Course_64",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 43,
+      "faculty_id": "faculty_42",
+      "group_id": "group_0",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_65",
+      "name": "Course_65",
+      "is_lab": true,
+      "medium": "regional",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 60,
+      "faculty_id": "faculty_35",
+      "group_id": "group_3",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_66",
+      "name": "Course_66",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 36,
+      "faculty_id": "faculty_41",
+      "group_id": "group_2",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_67",
+      "name": "Course_67",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 42,
+      "faculty_id": "faculty_55",
+      "group_id": "group_3",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_68",
+      "name": "Course_68",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 44,
+      "faculty_id": "faculty_16",
+      "group_id": "group_5",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_69",
+      "name": "Course_69",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 32,
+      "faculty_id": "faculty_19",
+      "group_id": "group_5",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_70",
+      "name": "Course_70",
+      "is_lab": true,
+      "medium": "regional",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 50,
+      "faculty_id": "faculty_4",
+      "group_id": "group_4",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_71",
+      "name": "Course_71",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 59,
+      "faculty_id": "faculty_36",
+      "group_id": "group_3",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_72",
+      "name": "Course_72",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 29,
+      "faculty_id": "faculty_45",
+      "group_id": "group_6",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_73",
+      "name": "Course_73",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 24,
+      "faculty_id": "faculty_8",
+      "group_id": "group_2",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_74",
+      "name": "Course_74",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 58,
+      "faculty_id": "faculty_25",
+      "group_id": "group_1",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_75",
+      "name": "Course_75",
+      "is_lab": true,
+      "medium": "regional",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 58,
+      "faculty_id": "faculty_43",
+      "group_id": "group_4",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_76",
+      "name": "Course_76",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 46,
+      "faculty_id": "faculty_36",
+      "group_id": "group_5",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_77",
+      "name": "Course_77",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 55,
+      "faculty_id": "faculty_11",
+      "group_id": "group_3",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_78",
+      "name": "Course_78",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 47,
+      "faculty_id": "faculty_18",
+      "group_id": "group_7",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_79",
+      "name": "Course_79",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 56,
+      "faculty_id": "faculty_3",
+      "group_id": "group_7",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_80",
+      "name": "Course_80",
+      "is_lab": true,
+      "medium": "hindi",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 52,
+      "faculty_id": "faculty_16",
+      "group_id": "group_0",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_81",
+      "name": "Course_81",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 35,
+      "faculty_id": "faculty_49",
+      "group_id": "group_0",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_82",
+      "name": "Course_82",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 38,
+      "faculty_id": "faculty_40",
+      "group_id": "group_3",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_83",
+      "name": "Course_83",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 35,
+      "faculty_id": "faculty_49",
+      "group_id": "group_0",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_84",
+      "name": "Course_84",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 41,
+      "faculty_id": "faculty_16",
+      "group_id": "group_2",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_85",
+      "name": "Course_85",
+      "is_lab": true,
+      "medium": "hindi",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 23,
+      "faculty_id": "faculty_19",
+      "group_id": "group_2",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_86",
+      "name": "Course_86",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 54,
+      "faculty_id": "faculty_42",
+      "group_id": "group_0",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_87",
+      "name": "Course_87",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 38,
+      "faculty_id": "faculty_51",
+      "group_id": "group_6",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_88",
+      "name": "Course_88",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 52,
+      "faculty_id": "faculty_22",
+      "group_id": "group_7",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_89",
+      "name": "Course_89",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 34,
+      "faculty_id": "faculty_55",
+      "group_id": "group_4",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_90",
+      "name": "Course_90",
+      "is_lab": true,
+      "medium": "hindi",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 34,
+      "faculty_id": "faculty_39",
+      "group_id": "group_4",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_91",
+      "name": "Course_91",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 24,
+      "faculty_id": "faculty_56",
+      "group_id": "group_6",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_92",
+      "name": "Course_92",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 38,
+      "faculty_id": "faculty_50",
+      "group_id": "group_0",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_93",
+      "name": "Course_93",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 30,
+      "faculty_id": "faculty_22",
+      "group_id": "group_4",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_94",
+      "name": "Course_94",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 60,
+      "faculty_id": "faculty_7",
+      "group_id": "group_0",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_95",
+      "name": "Course_95",
+      "is_lab": true,
+      "medium": "english",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 49,
+      "faculty_id": "faculty_14",
+      "group_id": "group_0",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_96",
+      "name": "Course_96",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 55,
+      "faculty_id": "faculty_38",
+      "group_id": "group_1",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_97",
+      "name": "Course_97",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 30,
+      "faculty_id": "faculty_34",
+      "group_id": "group_5",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_98",
+      "name": "Course_98",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 22,
+      "faculty_id": "faculty_34",
+      "group_id": "group_6",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_99",
+      "name": "Course_99",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 50,
+      "faculty_id": "faculty_50",
+      "group_id": "group_6",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_100",
+      "name": "Course_100",
+      "is_lab": true,
+      "medium": "english",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 42,
+      "faculty_id": "faculty_31",
+      "group_id": "group_1",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_101",
+      "name": "Course_101",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 59,
+      "faculty_id": "faculty_47",
+      "group_id": "group_3",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_102",
+      "name": "Course_102",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 32,
+      "faculty_id": "faculty_41",
+      "group_id": "group_0",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_103",
+      "name": "Course_103",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 50,
+      "faculty_id": "faculty_54",
+      "group_id": "group_7",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_104",
+      "name": "Course_104",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 20,
+      "faculty_id": "faculty_52",
+      "group_id": "group_4",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_105",
+      "name": "Course_105",
+      "is_lab": true,
+      "medium": "regional",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 43,
+      "faculty_id": "faculty_27",
+      "group_id": "group_5",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_106",
+      "name": "Course_106",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 53,
+      "faculty_id": "faculty_0",
+      "group_id": "group_1",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_107",
+      "name": "Course_107",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 44,
+      "faculty_id": "faculty_25",
+      "group_id": "group_7",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_108",
+      "name": "Course_108",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 23,
+      "faculty_id": "faculty_54",
+      "group_id": "group_6",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_109",
+      "name": "Course_109",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 45,
+      "faculty_id": "faculty_26",
+      "group_id": "group_6",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_110",
+      "name": "Course_110",
+      "is_lab": true,
+      "medium": "regional",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 46,
+      "faculty_id": "faculty_27",
+      "group_id": "group_7",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_111",
+      "name": "Course_111",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 40,
+      "faculty_id": "faculty_10",
+      "group_id": "group_6",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_112",
+      "name": "Course_112",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 59,
+      "faculty_id": "faculty_4",
+      "group_id": "group_3",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_113",
+      "name": "Course_113",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 42,
+      "faculty_id": "faculty_44",
+      "group_id": "group_5",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_114",
+      "name": "Course_114",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 56,
+      "faculty_id": "faculty_46",
+      "group_id": "group_5",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_115",
+      "name": "Course_115",
+      "is_lab": true,
+      "medium": "english",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 45,
+      "faculty_id": "faculty_38",
+      "group_id": "group_5",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_116",
+      "name": "Course_116",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 31,
+      "faculty_id": "faculty_35",
+      "group_id": "group_7",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_117",
+      "name": "Course_117",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 53,
+      "faculty_id": "faculty_30",
+      "group_id": "group_5",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_118",
+      "name": "Course_118",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 47,
+      "faculty_id": "faculty_49",
+      "group_id": "group_0",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_119",
+      "name": "Course_119",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 27,
+      "faculty_id": "faculty_18",
+      "group_id": "group_5",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_120",
+      "name": "Course_120",
+      "is_lab": true,
+      "medium": "english",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 52,
+      "faculty_id": "faculty_33",
+      "group_id": "group_0",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_121",
+      "name": "Course_121",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 25,
+      "faculty_id": "faculty_40",
+      "group_id": "group_7",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_122",
+      "name": "Course_122",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 57,
+      "faculty_id": "faculty_58",
+      "group_id": "group_2",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_123",
+      "name": "Course_123",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 48,
+      "faculty_id": "faculty_51",
+      "group_id": "group_2",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_124",
+      "name": "Course_124",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 40,
+      "faculty_id": "faculty_51",
+      "group_id": "group_2",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_125",
+      "name": "Course_125",
+      "is_lab": true,
+      "medium": "regional",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 55,
+      "faculty_id": "faculty_35",
+      "group_id": "group_4",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_126",
+      "name": "Course_126",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 54,
+      "faculty_id": "faculty_24",
+      "group_id": "group_6",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_127",
+      "name": "Course_127",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 52,
+      "faculty_id": "faculty_23",
+      "group_id": "group_3",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_128",
+      "name": "Course_128",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 60,
+      "faculty_id": "faculty_44",
+      "group_id": "group_4",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_129",
+      "name": "Course_129",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 26,
+      "faculty_id": "faculty_39",
+      "group_id": "group_1",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_130",
+      "name": "Course_130",
+      "is_lab": true,
+      "medium": "regional",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 25,
+      "faculty_id": "faculty_18",
+      "group_id": "group_5",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_131",
+      "name": "Course_131",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 55,
+      "faculty_id": "faculty_23",
+      "group_id": "group_7",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_132",
+      "name": "Course_132",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 32,
+      "faculty_id": "faculty_44",
+      "group_id": "group_4",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_133",
+      "name": "Course_133",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 21,
+      "faculty_id": "faculty_57",
+      "group_id": "group_6",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_134",
+      "name": "Course_134",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 48,
+      "faculty_id": "faculty_1",
+      "group_id": "group_1",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_135",
+      "name": "Course_135",
+      "is_lab": true,
+      "medium": "english",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 38,
+      "faculty_id": "faculty_44",
+      "group_id": "group_4",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_136",
+      "name": "Course_136",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 45,
+      "faculty_id": "faculty_6",
+      "group_id": "group_0",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_137",
+      "name": "Course_137",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 30,
+      "faculty_id": "faculty_27",
+      "group_id": "group_2",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_138",
+      "name": "Course_138",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 21,
+      "faculty_id": "faculty_32",
+      "group_id": "group_1",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_139",
+      "name": "Course_139",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 51,
+      "faculty_id": "faculty_22",
+      "group_id": "group_4",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_140",
+      "name": "Course_140",
+      "is_lab": true,
+      "medium": "regional",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 21,
+      "faculty_id": "faculty_43",
+      "group_id": "group_3",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_141",
+      "name": "Course_141",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 24,
+      "faculty_id": "faculty_54",
+      "group_id": "group_1",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_142",
+      "name": "Course_142",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 27,
+      "faculty_id": "faculty_9",
+      "group_id": "group_7",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_143",
+      "name": "Course_143",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 20,
+      "faculty_id": "faculty_3",
+      "group_id": "group_6",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_144",
+      "name": "Course_144",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 48,
+      "faculty_id": "faculty_55",
+      "group_id": "group_3",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_145",
+      "name": "Course_145",
+      "is_lab": true,
+      "medium": "hindi",
+      "required_room_type": "lab",
+      "lab_duration_slots": 2,
+      "enrolment": 56,
+      "faculty_id": "faculty_40",
+      "group_id": "group_6",
+      "weekly_hours": 3
+    },
+    {
+      "id": "course_146",
+      "name": "Course_146",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 54,
+      "faculty_id": "faculty_46",
+      "group_id": "group_4",
+      "weekly_hours": 2
+    },
+    {
+      "id": "course_147",
+      "name": "Course_147",
+      "is_lab": false,
+      "medium": "regional",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 50,
+      "faculty_id": "faculty_25",
+      "group_id": "group_7",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_148",
+      "name": "Course_148",
+      "is_lab": false,
+      "medium": "english",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 50,
+      "faculty_id": "faculty_13",
+      "group_id": "group_6",
+      "weekly_hours": 4
+    },
+    {
+      "id": "course_149",
+      "name": "Course_149",
+      "is_lab": false,
+      "medium": "hindi",
+      "required_room_type": "lecture",
+      "lab_duration_slots": 1,
+      "enrolment": 40,
+      "faculty_id": "faculty_16",
+      "group_id": "group_6",
+      "weekly_hours": 4
+    }
+  ],
+  "hard_constraints": [
+    "H1",
+    "H2",
+    "H3",
+    "H4",
+    "H5",
+    "H6",
+    "H7",
+    "H8"
+  ],
+  "soft_constraint_weights": {
+    "S1": 5,
+    "S2": 3,
+    "S3": 4,
+    "S4": 6,
+    "S5": 2,
+    "S6": 3
+  }
+}

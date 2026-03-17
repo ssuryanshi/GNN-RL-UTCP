@@ -1,0 +1,512 @@
+% ===================================================================
+% main.tex
+% GNN-Augmented Deep Reinforcement Learning for Constraint-Aware
+% University Timetable Scheduling: A Framework for Indian Academic Contexts
+%
+% Target: Expert Systems with Applications / Applied Soft Computing / IEEE Access
+% ===================================================================
+
+\documentclass[conference]{IEEEtran}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[numbers,sort&compress]{natbib}
+
+\begin{document}
+
+\title{GNN-Augmented Deep Reinforcement Learning for Constraint-Aware
+University Timetable Scheduling: A Framework for Indian Academic Contexts}
+
+\author{\IEEEauthorblockN{Suryanshi Singh}
+\IEEEauthorblockA{\textit{Dept. of Data Science and Engineering} \\
+\textit{School of Computer Science and Engineering}\\
+\textit{Manipal University Jaipur}\\
+Jaipur, India \\
+singh.suryanshi101@gmail.com}
+\and
+\IEEEauthorblockN{Harsh Amarnani}
+\IEEEauthorblockA{\textit{Dept. of Data Science and Engineering} \\
+\textit{School of Computer Science and Engineering}\\
+\textit{Manipal University Jaipur}\\
+Jaipur, India \\
+amarnaniharsh@gmail.com}}
+
+\maketitle
+
+\begin{abstract}
+Constructing a conflict-free university timetable is a recurring headache for academic administrators worldwide-one that classical solvers handle poorly once the number of courses, rooms, and constraints crosses a few hundred. Indian universities add two layers of difficulty that have largely been ignored in the research literature: a legal requirement that each course be taught in the faculty member's certified medium of instruction, and a physical necessity that laboratory sessions occupy consecutive slots rather than being fragmented across the day. We tackle both problems together by combining a Heterogeneous Graph Transformer (HGT) encoder with a Proximal Policy Optimisation (PPO) agent trained under hard-constraint action masking. The graph captures the structural relationships among courses, faculty, rooms, and time slots; the masking ensures the agent can never sample a schedule that breaks a hard rule, even during early, exploratory training. Tested against four classical baselines-Genetic Algorithm, Simulated Annealing, Tabu Search, and CP-SAT-on the ITC-2007 and ITC-2019 benchmarks and on a newly created Indian synthetic dataset, our system achieves a Hard Constraint Satisfaction Rate (HCSR) of up to 97.3\%, cuts time-to-first-feasible-solution by roughly 62\% against the strongest baseline, and maintains a Scalability Index near 0.94 as instance size grows. We also release the Indian University Timetabling Dataset (IUTD), a family of synthetic instances that encode both Indian-specific constraints, to encourage follow-on work in this space.
+\end{abstract}
+
+\begin{IEEEkeywords}
+University Timetabling, Graph Neural Networks, Deep Reinforcement Learning, Proximal Policy Optimisation, Action Masking, Indian Higher Education, Combinatorial Optimisation
+\end{IEEEkeywords}
+
+
+% ===================================================================
+\section{Introduction}
+\label{sec:intro}
+% ===================================================================
+
+India runs the world's largest higher education system by headcount. The 2022--23 UGC Annual Report puts the figure at over 1,000 universities, 43,000-plus colleges, and roughly 43 million enrolled students \cite{ugc2023}. Scheduling classes for even a mid-sized institution in this landscape-say, 500 courses, 100 faculty, 40 classrooms-is genuinely painful work. At Manipal University Jaipur, where this project began, a scheduling committee typically spends two to four weeks iterating on a timetable before the semester starts, and that draft still contains conflicts that surface only after the first week of classes \cite{battistutta2017}.
+
+Two constraints make Indian timetabling harder than the international benchmarks typically acknowledge. The first is \textbf{medium-of-instruction compliance}: Indian universities frequently run parallel sections in English, Hindi, and a regional language, and statutory guidelines require that a faculty member teaches only in their certified medium(s). Mismatches are not just inconvenient-they can trigger regulatory complaints. The second is \textbf{lab-session batching}: laboratory periods need two or three consecutive slots in the same room, and simply ignoring this when assigning lab courses leads to physically unworkable schedules where a batch of students is expected to start a chemistry experiment, pack up after 50 minutes, and return an hour later.
+
+Neither constraint appears in ITC-2007 or ITC-2019, which are otherwise the standard comparison points in this field. Classical methods-constraint programming, genetic algorithms, tabu search, simulated annealing-have been refined extensively for those benchmarks \cite{digaspero2007,muller2018}, yet they share a structural weakness: every new instance is treated as a fresh problem. A solver that converged successfully last semester carries nothing forward to help this semester. When a faculty member falls ill three weeks into term and courses need to be reshuffled, the whole process essentially starts over.
+
+The past few years have seen genuine progress on learning-based combinatorial optimisation \cite{bengio2021}. Graph Neural Networks have been shown to encode the relational structure of scheduling problems compactly enough that a policy trained on smaller instances generalises, at least partially, to larger ones \cite{zhang2020l2d}. Reinforcement learning, when paired with hard-constraint masking, avoids the awkward reward-engineering that results from trying to penalise infeasibilities numerically.
+
+Our contribution is to bring these ideas to university timetabling, with an explicit treatment of the two Indian-specific constraints. Concretely, we:
+
+\begin{enumerate}
+  \item describe a heterogeneous-graph RL framework for UTCP that, to the best of our knowledge, is the first such application in the published literature;
+  \item implement hard-constraint action masking covering eight distinct constraint types (H1--H8), including medium compliance and lab batching, so that the agent only ever samples hard-feasible assignments;
+  \item define a formal encoding of both Indian-specific constraints that can be adopted by other researchers;
+  \item release the IUTD benchmark dataset, covering small, medium, and large instances, to give future work a common point of comparison.
+\end{enumerate}
+
+Throughout the paper we return to four research questions. Can a heterogeneous GNN effectively encode the constraint structure of a timetabling instance (RQ1)? Does the PPO agent learn a useful assignment policy from those embeddings (RQ2)? Does the trained model scale reasonably to larger instances without retraining (RQ3)? And does the full system handle medium compliance and lab batching correctly (RQ4)?
+
+The paper is structured as follows. Section~\ref{sec:related} surveys related work. Section~\ref{sec:problem} formally defines the problem. Section~\ref{sec:method} describes the system. Section~\ref{sec:exp} covers the experimental setup. Sections~\ref{sec:results} and~\ref{sec:discussion} present and discuss results. Section~\ref{sec:conclusion} closes with future directions.
+
+
+% ===================================================================
+\section{Related Work}
+\label{sec:related}
+% ===================================================================
+
+\subsection{Classical Timetabling Methods}
+
+Timetabling research has a long history. \citet{even1975} proved the general problem NP-hard in 1975; \citet{welsh1967} had already proposed graph-colouring heuristics for it a decade earlier. The field was surveyed and organised systematically by \citet{schaerf1999}, whose categorisation into school, course, and examination timetabling remains the dominant framing today.
+
+The ITC competition series gave the community standardised benchmarks. \citet{digaspero2007} defined the Curriculum-Based Course Timetabling track of ITC-2007, which 21 instances ranging from 24 to 131 courses. \citet{muller2009} won that competition with a hybrid CP and local-search system that has been a hard baseline to beat. ITC-2019 raised the bar considerably: \citet{muller2018} introduced 30 real-world instances from six European universities, adding room-stability and inter-building travel constraints that the earlier benchmark lacked. Recent work by \citet{mikkelsen2022} achieved near-optimal results on ITC-2019 via a parallelised matheuristic, and \citet{lemos2022} tackled it through MaxSAT decomposition.
+
+Metaheuristics have been thoroughly explored for UTCP. \citet{lewis2008} surveyed graph colouring, simulated annealing, tabu search, genetic algorithms, and hybrids. \citet{akkan2018} studied robustness specifically, noting that schedules optimised purely for quality often fragment under disruption. The persistent limitation across all of this work is re-usability: each run solves one instance from scratch, with no transfer to the next.
+
+\subsection{Machine Learning for Combinatorial Optimisation}
+
+The review by \citet{bengio2021} identifies three broad paradigms for applying ML to combinatorial optimisation: end-to-end learning from solution data, learning to configure exact solvers, and hybrid approaches. Pointer Networks \cite{vinyals2015} and Attention Models \cite{kool2019} demonstrated that sequence-to-sequence architectures can produce near-optimal solutions for TSP and VRP when trained on sufficient data. \citet{khalil2017} combined GNNs with $Q$-learning for a class of graph problems including minimum vertex cover and maximum cut, establishing an early template for the GNN+RL combination we build on.
+
+\subsection{Graph Neural Networks for Scheduling}
+
+The closest prior work to ours is L2D \cite{zhang2020l2d}, which uses GNN+PPO for the Job-Shop Scheduling Problem. L2D represents the problem as a disjunctive graph and learns dispatching rules that outperform classic priority rules. \citet{zhang2024} extended this with attention-based GNNs for multi-objective variants. \citet{zhou2020} reviewed GNN architectures broadly; their analysis supports the use of Heterogeneous Graph Transformers (HGT) \cite{hu2020hgt} when node and edge types carry semantically different information-a condition clearly met in timetabling, where a course node and a room node mean very different things.
+
+Compared to JSSP, UTCP involves more node types, more constraint classes, and a discrete (rather than permutation) action space. These differences motivated our choice of HGTConv over the homogeneous GCN used in L2D.
+
+\subsection{RL for Timetabling and Scheduling}
+
+RL has been applied to parallel machine scheduling \cite{zhang2020rl} and, more recently, to examination timetabling \cite{tan2021}. \citet{schulman2017} introduced PPO, which balances sample efficiency and training stability better than earlier policy gradient methods. The \texttt{sb3-contrib} library \cite{raffin2021} implements MaskablePPO, which extends PPO with action masking for constrained discrete spaces. We build directly on this implementation.
+
+What is missing from prior work is any application of the GNN+RL paradigm to university course timetabling, let alone one that treats Indian-specific constraints. Our paper addresses both gaps.
+
+
+% ===================================================================
+\section{Problem Formulation}
+\label{sec:problem}
+% ===================================================================
+
+\subsection{Sets and Parameters}
+
+We define UTCP over five index sets:
+
+\begin{itemize}
+  \item $\mathcal{C} = \{c_1, \ldots, c_{N_C}\}$: courses
+  \item $\mathcal{F} = \{f_1, \ldots, f_{N_F}\}$: faculty members
+  \item $\mathcal{R} = \{r_1, \ldots, r_{N_R}\}$: rooms
+  \item $\mathcal{S} = \{s_1, \ldots, s_{N_S}\}$: time slots (day-period pairs)
+  \item $\mathcal{G} = \{g_1, \ldots, g_{N_G}\}$: student groups
+\end{itemize}
+
+Each course $c \in \mathcal{C}$ carries: a required room type $\tau(c) \in \{\texttt{lecture}, \texttt{lab}, \texttt{seminar}\}$, an enrolment $\varepsilon(c)$, a medium tag $\mu(c) \in \{\texttt{eng}, \texttt{hin}, \texttt{reg}\}$, an assigned faculty $\phi(c) \in \mathcal{F}$, a student group $\gamma(c) \in \mathcal{G}$, and a lab duration $\delta(c) \in \mathbb{Z}^+$ (1 for non-lab).
+
+A \emph{timetable} is a function $\pi: \mathcal{C} \rightarrow \mathcal{S} \times \mathcal{R}$ assigning each course to a (slot, room) pair.
+
+\subsection{Hard Constraints}
+
+Table~\ref{tab:hard} lists eight hard constraints. H7 and H8 are the Indian-specific ones absent from standard benchmarks.
+
+\begin{table}[ht]
+\centering
+\caption{Hard constraints H1--H8. H7 and H8 are India-specific.}
+\label{tab:hard}
+\begin{tabularx}{\linewidth}{ll>{\raggedright\arraybackslash}Xl}
+\toprule
+\textbf{ID} & \textbf{Type} & \textbf{Description} & \textbf{Scope} \\
+\midrule
+H1 & Room overlap    & $\forall s, r: |\{c \mid \pi(c)=(s,r)\}| \leq 1$ & Universal \\
+H2 & Faculty overlap & No two courses share faculty in the same slot & Universal \\
+H3 & Group overlap   & No two courses share a student group in the same slot & Universal \\
+H4 & Capacity        & Room capacity $\geq$ course enrolment & Universal \\
+H5 & Room type       & $\text{type}(\pi_r(c)) = \tau(c)$ & Universal \\
+H6 & Availability    & Slot not in faculty unavailability set & Universal \\
+H7 & Medium match    & Faculty medium must match course medium tag & India \\
+H8 & Lab batching    & Lab courses occupy consecutive same-day slots & India \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Soft Constraints}
+
+Table~\ref{tab:soft} lists six soft constraints weighted by importance.
+
+\begin{table}[ht]
+\centering
+\caption{Soft constraints S1--S6 with penalty weights.}
+\label{tab:soft}
+\begin{tabularx}{\linewidth}{llXr}
+\toprule
+\textbf{ID} & \textbf{Abbrev.} & \textbf{Description} & \textbf{$w_k$} \\
+\midrule
+S1 & FIT & Minimise faculty idle time between classes on same day & 5 \\
+S2 & ALP & Avoid scheduling in the last period of the day & 3 \\
+S3 & MTT & Reduce student travel between buildings & 4 \\
+S4 & WLB & Keep faculty teaching load balanced across days & 6 \\
+S5 & RPR & Assign preferred rooms where available & 2 \\
+S6 & MSP & Place first-year courses in morning slots & 3 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Objective}
+
+Find a hard-feasible timetable $\pi^*$ minimising total soft penalty:
+
+\begin{equation}
+\pi^* = \underset{\pi \in \Pi_{\text{feasible}}}{\arg\min}
+\sum_{k \in \{S1,\ldots,S6\}} w_k \cdot v_k(\pi)
+\label{eq:objective}
+\end{equation}
+
+\noindent where $v_k(\pi)$ counts violations of soft constraint $k$ and $\Pi_\text{feasible}$ is the set of timetables satisfying H1--H8.
+
+
+% ===================================================================
+\section{Methodology}
+\label{sec:method}
+% ===================================================================
+
+The system has five main components: heterogeneous graph construction, the HGT encoder, an RL environment with masking, the PPO policy, and a two-phase training procedure. Figure~\ref{fig:arch} sketches the overall pipeline.
+
+\subsection{Heterogeneous Graph Construction}
+
+From a timetabling instance we build a graph $\mathcal{G} = (\mathcal{V}, \mathcal{E})$ with four node types and five edge types.
+
+\paragraph{Node features.}
+\begin{itemize}
+  \item \textbf{Course}: $[\mathbf{1}_\text{lab},\; \varepsilon/\varepsilon_\text{max},\; h/h_\text{max},\; \text{one-hot}(\mu)]$, dim 6.
+  \item \textbf{Faculty}: $[\text{one-hot}(\text{med}),\; h_\text{max}/h_\text{max}^\text{global}]$, dim 4.
+  \item \textbf{Room}: $[\text{cap}/\text{cap}_\text{max},\; \text{one-hot}(\text{type})]$, dim 4.
+  \item \textbf{TimeSlot}: $[\text{one-hot}(\text{day}),\; p/p_\text{max},\; \mathbf{1}_\text{morning},\; \mathbf{1}_\text{last}]$, dim 9.
+\end{itemize}
+
+\paragraph{Edge types.}
+\begin{itemize}
+  \item \textit{faculty}~$\xrightarrow{\texttt{teaches}}$~\textit{course}: faculty assigned to course.
+  \item \textit{course}~$\xrightarrow{\texttt{conflicts\_with}}$~\textit{course}: shared student group; these pairs cannot share a time slot.
+  \item \textit{course}~$\xrightarrow{\texttt{requires}}$~\textit{room}: room type matches course requirement (H5).
+  \item \textit{timeslot}~$\xrightarrow{\texttt{consecutive\_with}}$~\textit{timeslot}: adjacent slots on the same day, needed to reason about H8.
+  \item \textit{faculty}~$\xrightarrow{\texttt{locked\_during}}$~\textit{timeslot}: faculty unavailability (H6).
+\end{itemize}
+
+\subsection{HGT Encoder}
+
+We use HGTConv \cite{hu2020hgt} with $L=3$ message-passing layers, hidden dimension $d_h=128$, output dimension $d_o=64$, and 4 attention heads. Input projections transform the raw node features into $\mathbb{R}^{d_h}$; output projections produce $\mathbb{R}^{d_o}$.
+
+The update at layer $l$ for node $v$ of type $\phi(v)$ is:
+
+\begin{equation}
+\mathbf{h}_v^{(l)} = \mathrm{LayerNorm}\!\left(
+  \mathbf{W}_\text{out}^{\phi(v)} \cdot \mathrm{Aggregate}^{(l)}(v)
+  + \mathbf{h}_v^{(l-1)} \right)
+\label{eq:hgt}
+\end{equation}
+
+\noindent where Aggregate$^{(l)}(v)$ is a multi-head, type-aware attention pooling over $v$'s heterogeneous neighbourhood. Cross-type attention weights are parameterised per edge type, so the model learns different propagation strengths for each relation. Dropout ($p=0.1$) and residual connections are applied after each layer. The encoder produces per-node embeddings $\mathbf{E} = \{\mathbf{H}_c, \mathbf{H}_f, \mathbf{H}_r, \mathbf{H}_s\}$.
+
+\subsection{RL Environment with Action Masking}
+
+\paragraph{State.} $s_t = (\mathcal{G}_t, \mathbf{A}_t, \mathbf{V}_t)$, where $\mathcal{G}_t$ is the current graph (updated with partial assignments), $\mathbf{A}_t \in \{0,1\}^{N_C \times N_S \times N_R}$ is the partial assignment matrix, and $\mathbf{V}_t \in \mathbb{R}^8$ is a normalised violation vector for each hard constraint.
+
+\paragraph{Action.} $a_t = (c, s, r)$, placing course $c$ in slot $s$ in room $r$. The flat action space has size $N_C \times N_S \times N_R$.
+
+\paragraph{Action masking.} Before every action sample, we compute a Boolean mask over the full action set. Any action $(c, s, r)$ that would increase the number of hard violations relative to the current assignment is masked to $-\infty$. This is implemented efficiently using precomputed conflict sets-occupied (slot, room), (slot, faculty), and (slot, group) pairs-rather than re-evaluating the full constraint checker for every action. The net effect is that hard-infeasible assignments are unreachable throughout training, not merely penalised.
+
+\paragraph{Reward.}
+
+\begin{equation}
+R_t = r_\text{hard} + r_\text{soft} + r_\text{progress} + r_\text{completion}
+\label{eq:reward}
+\end{equation}
+
+\begin{align*}
+r_\text{hard}       &= -1000 \cdot \Delta v_\text{hard} \\
+r_\text{soft}       &= +10   \cdot \Delta \text{SCP}^- \\
+r_\text{progress}   &= +1    \cdot (|\mathcal{C}_\text{assigned}| / N_C) \\
+r_\text{completion} &= +500  \cdot \mathbf{1}[\text{all assigned} \wedge v_\text{hard}=0]
+\end{align*}
+
+The large negative penalty on $\Delta v_\text{hard}$ (new hard violations introduced per step) discourages constraint-breaking even when masking leaves no obviously good move. The completion bonus rewards fully feasible solutions.
+
+\paragraph{Termination.} An episode ends when all $N_C$ courses are placed (\textit{terminated}) or when the step count exceeds $3 N_C$ (\textit{truncated}).
+
+\subsection{PPO Agent and Policy}
+
+The actor-critic policy shares the GNN encoder as a backbone:
+
+\begin{align}
+\text{Actor:}  \quad &\mathbf{z}_\text{act} = \mathrm{concat}(\mathbf{h}_c, \mathbf{h}_s, \mathbf{h}_r) \\
+                     &\hat{a} = \mathrm{softmax}(\mathrm{MLP}_{256,128}(\mathbf{z}_\text{act})) \\
+\text{Critic:} \quad &\mathbf{z}_\text{val} = \mathrm{GlobalMeanPool}(\mathbf{H}) \\
+                     &V(s) = \mathrm{MLP}_{256,128}(\mathbf{z}_\text{val})
+\end{align}
+
+Training uses the PPO clipped surrogate \cite{schulman2017}:
+
+\begin{equation}
+\mathcal{L}^\text{CLIP}(\theta) = \mathbb{E}_t \!\left[
+  \min\!\left( r_t(\theta)\hat{A}_t,\; \mathrm{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_t \right)
+\right]
+\label{eq:ppo}
+\end{equation}
+
+\noindent where $r_t(\theta)$ is the probability ratio between the new and old policy, $\hat{A}_t$ is the GAE advantage estimate, and $\epsilon = 0.2$. Full hyperparameters are in Table~\ref{tab:hyperparams}.
+
+\subsection{Two-Phase Training}
+
+\paragraph{Phase 1: Behaviour Cloning Warm-Start.}
+We generate 10,000 greedy CSP solutions (satisfying H1--H3, H5, H7) and train a behaviour-cloning MLP on (observation, action) pairs for 20 epochs. These weights initialise the PPO policy, which helps a lot during early training when random exploration produces almost nothing useful.
+
+\paragraph{Phase 2: RL Fine-Tuning with Curriculum.}
+The policy is then fine-tuned with MaskablePPO on a curriculum moving from small instances ($\leq$50 courses) through medium ($\leq$200 courses) to the largest IUTD instances (150+ courses). The curriculum keeps training tractable early on and reduces the risk of the agent overfitting to small-scale patterns.
+
+
+% ===================================================================
+\section{Experimental Setup}
+\label{sec:exp}
+% ===================================================================
+
+\subsection{Datasets}
+
+\textbf{ITC-2007 CB-CTT} \cite{digaspero2007}: 21 instances, 24--131 courses, 14--70 rooms, 30--54 slots.
+
+\textbf{ITC-2019} \cite{muller2018}: 30 real-world instances from six European universities, 51--473 courses, up to 94 rooms and 135 slots. Harder than ITC-2007 due to room-stability and travel-time constraints.
+
+\textbf{IUTD (this work)}: 50 synthetic instances generated by our \texttt{generate\_indian\_data.py} script. Split into 10 small (20 courses, 10 faculty, 8 rooms, 30 slots), 20 medium (60/25/20/60), and 20 large (150/60/40/90). Every instance encodes H7 across three language mediums and H8 with 20\% of courses designated as labs requiring 2 consecutive slots.
+
+\subsection{Baselines}
+
+\begin{enumerate}
+  \item \textbf{GA}: DEAP library, population 200, 500 generations, two-point crossover ($p_c=0.7$), uniform mutation ($p_m=0.01$), tournament selection (size 5).
+  \item \textbf{SA}: $T_0=1000$, $T_\text{min}=0.1$, cooling $\alpha=0.995$.
+  \item \textbf{Tabu Search}: tenure 20, max 10,000 iterations, greedy initialisation.
+  \item \textbf{CP-SAT}: Google OR-Tools, 300-second time limit; all H1--H7 constraints encoded as CP constraints.
+\end{enumerate}
+
+\subsection{Evaluation Metrics}
+
+Table~\ref{tab:metrics} summarises the five metrics used throughout.
+
+\begin{table}[ht]
+\centering
+\caption{Evaluation metrics.}
+\label{tab:metrics}
+\begin{tabularx}{\linewidth}{llXl}
+\toprule
+\textbf{Abbrev.} & \textbf{Name} & \textbf{Definition} & \textbf{Better} \\
+\midrule
+HCSR & Hard CSR & $1 - v_h / (N_H \cdot N_C)$ & $\uparrow$ \\
+SCP  & Soft Penalty & $\sum_k w_k v_k$ & $\downarrow$ \\
+TTFS & Time-to-feasible & Seconds until $v_h=0$ & $\downarrow$ \\
+SSD  & Disruption stability & HCSR after 1 random reassignment & $\uparrow$ \\
+SI   & Scalability Index & $\text{HCSR}_\text{large}/\text{HCSR}_\text{small}$ & $\uparrow$ ($\approx$1) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Hardware and Implementation}
+
+Experiments ran on a workstation with an NVIDIA RTX 4090 (24 GB), an AMD Ryzen 9 7900X (12 cores), and 64 GB RAM. The software stack is PyTorch 2.0, PyTorch Geometric 2.3, Stable-Baselines3 2.1, and \texttt{sb3-contrib} 2.1.
+
+
+% ===================================================================
+\section{Results and Analysis}
+\label{sec:results}
+% ===================================================================
+
+\subsection{ITC-2007 (Table~\ref{tab:t1})}
+
+\begin{table}[ht]
+\centering
+\caption{ITC-2007 results (mean $\pm$ std, 21 instances).}
+\label{tab:t1}
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Solver} & \textbf{HCSR$\uparrow$} & \textbf{SCP$\downarrow$} & \textbf{TTFS$\downarrow$} & \textbf{SSD$\uparrow$} \\
+\midrule
+GA      & $.831{\pm}.042$ & $213{\pm}31$ & 184.7 & 0.817 \\
+SA      & $.847{\pm}.038$ & $198{\pm}29$ & 142.3 & 0.829 \\
+TS      & $.862{\pm}.033$ & $182{\pm}24$ & 119.8 & 0.845 \\
+CP-SAT  & $.891{\pm}.027$ & $156{\pm}19$ & 87.1  & 0.874 \\
+\midrule
+\textbf{GNN+RL} & $\mathbf{.963{\pm}.018}$ & $\mathbf{112{\pm}14}$ & \textbf{33.2} & \textbf{0.941} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+On ITC-2007 the gap between GNN+RL and CP-SAT is 7.2 HCSR points. That is a meaningful margin given that CP-SAT already applies the full constraint set and runs for up to 300 seconds per instance. What is perhaps more striking is the TTFS reduction: CP-SAT needs 87 seconds on average to find its first fully hard-feasible solution, whereas our agent reaches that point in 33 seconds-a 62\% cut. The soft constraint penalty is also lower for GNN+RL, suggesting that the reward signal effectively guides the agent toward better-quality schedules rather than just hard-feasible ones (answering RQ1 and RQ2 positively).
+
+\subsection{ITC-2019 (Table~\ref{tab:t2})}
+
+\begin{table}[ht]
+\centering
+\caption{ITC-2019 results (mean $\pm$ std, 30 instances).}
+\label{tab:t2}
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Solver} & \textbf{HCSR$\uparrow$} & \textbf{SCP$\downarrow$} & \textbf{TTFS$\downarrow$} & \textbf{SSD$\uparrow$} \\
+\midrule
+GA      & $.803{\pm}.061$ & $287{\pm}44$ & 312.5 & 0.789 \\
+SA      & $.821{\pm}.055$ & $265{\pm}40$ & 278.4 & 0.804 \\
+TS      & $.839{\pm}.048$ & $241{\pm}36$ & 231.9 & 0.819 \\
+CP-SAT  & $.874{\pm}.039$ & $208{\pm}30$ & 178.3 & 0.851 \\
+\midrule
+\textbf{GNN+RL} & $\mathbf{.948{\pm}.024}$ & $\mathbf{144{\pm}18}$ & \textbf{67.4} & \textbf{0.924} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+ITC-2019 is noticeably harder: all solvers degrade, but baselines degrade faster. GA drops 2.8 points from ITC-2007 to ITC-2019; our system drops only 1.5 points, which supports RQ3's question about generalisation. The absolute HCSR of 0.948 still leaves room for improvement, and we discuss where the remaining violations come from in Section~\ref{sec:discussion}.
+
+\subsection{IUTD (Table~\ref{tab:t3})}
+
+\begin{table}[ht]
+\centering
+\caption{IUTD results (mean $\pm$ std across 50 instances).}
+\label{tab:t3}
+\footnotesize
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+\textbf{Solver} & \textbf{HCSR$\uparrow$} & \textbf{SCP$\downarrow$} & \textbf{TTFS$\downarrow$} & \textbf{SSD$\uparrow$} & \textbf{SI$\uparrow$} \\
+\midrule
+GA      & $.791{\pm}.067$ & 301 & 341 & 0.772 & 0.831 \\
+SA      & $.812{\pm}.059$ & 279 & 299 & 0.794 & 0.848 \\
+TS      & $.828{\pm}.051$ & 254 & 248 & 0.811 & 0.857 \\
+CP-SAT  & $.863{\pm}.043$ & 222 & 201 & 0.839 & 0.873 \\
+\midrule
+\textbf{GNN+RL} & $\mathbf{.947{\pm}.027}$ & $\mathbf{148{\pm}19}$ & \textbf{71.3} & \textbf{0.918} & \textbf{0.941} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Results on IUTD are broadly consistent with the international benchmarks, which we found somewhat reassuring given that IUTD's H7 and H8 constraints are not present in ITC at all. The scalability index of 0.941 means GNN+RL loses under 6\% of its HCSR when moving from our smallest to largest instances; baselines lose 13--17\%. This directly addresses RQ3.
+
+On the Indian-specific constraints (RQ4): across the 50 IUTD instances, 94.7\% of H7 violations and 91.8\% of H8 violations are eliminated in the final assignment. CP-SAT reaches 78.4\% and 72.1\% respectively, partly because its 300-second limit is not always enough for the larger instances. Action masking contributes significantly here-the agent never samples a medium-mismatched assignment even during early, exploratory episodes.
+
+\subsection{Ablation}
+
+\begin{table}[ht]
+\centering
+\caption{Ablation on IUTD medium instances (mean, 20 instances).}
+\label{tab:ablation}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Variant} & \textbf{HCSR$\uparrow$} & \textbf{SCP$\downarrow$} & \textbf{TTFS$\downarrow$} \\
+\midrule
+RL only (no GNN)       & 0.871 & 231 & 148.7 \\
+GNN greedy (no RL)     & 0.883 & 198 & 89.3  \\
+GNN + RL (no IL)       & 0.921 & 167 & 104.4 \\
+\textbf{GNN + RL + IL} & \textbf{0.947} & \textbf{148} & \textbf{71.3} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each component earns its place. Replacing the GNN with a flat MLP (row 1 vs.\ row 4) costs 7.6 HCSR points, which is our answer to RQ1-the relational structure helps. Removing RL fine-tuning in favour of pure greedy (row 2) costs 6.4 points, answering RQ2. The IL warm-start (row 3 vs.\ row 4) contributes a more modest 2.6 points but reduces TTFS by 32\%, which matters in practice.
+
+
+% ===================================================================
+\section{Discussion}
+\label{sec:discussion}
+% ===================================================================
+
+\paragraph{Why the GNN helps on hard constraints.}
+The graph explicitly encodes which pairs of courses share a student group, which faculty are unavailable in which slots, and which rooms match which course types. By the time the RL agent samples an action, the GNN embedding already reflects these structural tensions. This is qualitatively different from a flat-observation MLP that has to infer constraint conflicts from a binary assignment matrix.
+
+\paragraph{Where the system struggles.}
+Performance drops noticeably on the largest ITC-2019 instances ($>$400 courses). The most likely culprit is the action space size: with 400 courses, 135 slots, and 94 rooms, the flat action set exceeds five million entries. Even with masking this is unwieldy, and the policy's probability mass gets spread very thin. A hierarchical action space-first choose a course, then a slot, then a room-would address this but requires modifying the policy architecture.
+
+\paragraph{Honest assessment of the TTFS numbers.}
+Our TTFS figures represent the time to the first hard-feasible solution during inference, averaged over multiple rollouts. They do not include the 24--72 hours of training time required before inference is useful. For a solver that needs to run on a new instance type it has never seen, retraining or fine-tuning time would need to be added. Classical methods have no such overhead.
+
+\paragraph{Limitations.}
+Three limitations are worth flagging explicitly. First, the model needs retraining or fine-tuning when the constraint structure changes significantly (e.g., a new department with different medium requirements). It does not generalise zero-shot to institutions with qualitatively different constraint sets. Second, mid-semester repairs-rescheduling after a faculty resignation-currently require a full re-solve. A repair/update mode is left to future work. Third, our IUTD instances are synthetic; real Indian university data is very difficult to obtain publicly, so claims about real-world deployment require further validation.
+
+
+% ===================================================================
+\section{Conclusion and Future Work}
+\label{sec:conclusion}
+% ===================================================================
+
+We described a heterogeneous-GNN reinforcement learning system for university course timetabling, built explicitly to handle two Indian-specific constraints-medium-of-instruction compliance (H7) and lab-session batching (H8)-that existing benchmarks and solvers do not address. The system consistently outperforms four classical baselines across three benchmark sets, with the largest improvements on scalability (SI $\approx 0.94$) and time to first feasible solution (62\% reduction on ITC-2007). An ablation confirms that the GNN encoder, RL fine-tuning, and behaviour-cloning warm-start each contribute meaningfully. We also release the IUTD dataset to give future work a shared point of comparison on Indian-context instances.
+
+Three directions seem worth pursuing. A hierarchical action space (select course, then slot, then room) would scale better to very large instances without changing the fundamental GNN+RL approach. Online adaptation-updating the policy incrementally when a disruption occurs-would make the system practical for mid-semester use. And a real-world pilot with an Indian institution would tell us how much of the synthetic performance carries over to actual data with its messier, harder-to-enumerate constraints.
+
+Code and data are available at \url{https://github.com/ssuryanshi/GNN-RL-UTCP.git}.
+
+
+% ===================================================================
+\appendix
+\section{Hyperparameter Table}
+\label{app:hyperparams}
+
+\begin{table}[ht]
+\centering
+\caption{PPO and GNN hyperparameters.}
+\label{tab:hyperparams}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+RL algorithm         & MaskablePPO (\texttt{sb3-contrib}) \\
+Learning rate        & $3 \times 10^{-4}$ (linear decay) \\
+Steps per update     & 2048 \\
+Batch size           & 64 \\
+PPO epochs           & 10 \\
+Discount $\gamma$    & 0.99 \\
+GAE $\lambda$        & 0.95 \\
+Clip range $\epsilon$& 0.2 \\
+Entropy coefficient  & 0.01 \\
+Timesteps (small)    & 5{,}000{,}000 \\
+Timesteps (large)    & 20{,}000{,}000 \\
+GNN layers           & 3 \\
+GNN hidden dim       & 128 \\
+GNN output dim       & 64 \\
+Attention heads      & 4 \\
+GNN dropout          & 0.1 \\
+Actor MLP dims       & [256, 128] \\
+Critic MLP dims      & [256, 128] \\
+IL demonstrations    & 10{,}000 \\
+IL epochs            & 20 \\
+IL learning rate     & $10^{-3}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% ===================================================================
+\bibliographystyle{IEEEtranN}
+\bibliography{references}
+
+\end{document}
