@@ -144,7 +144,7 @@ python src/evaluate.py \
 @article{utcp_gnn_rl_2025,
   title   = {GNN-Augmented Deep Reinforcement Learning for Constraint-Aware
              University Timetable Scheduling: A Framework for Indian Academic Contexts},
-  author  = {Suryanshi},
+  author  = {Suryanshi},{ Harsh Amarnani}
   journal = {Expert Systems with Applications},
   year    = {2025}
 }
